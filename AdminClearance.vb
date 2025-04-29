@@ -32,6 +32,21 @@ Public Class AdminClearance
             txtClearanceTable.AllowUserToAddRows = False
             txtClearanceTable.AllowUserToDeleteRows = False
             txtClearanceTable.ReadOnly = True
+            txtClearanceTable.DataSource = table
+
+            With txtClearanceTable
+                .Columns("fullname").HeaderText = "Fullname"
+                .Columns("gender").HeaderText = "Gender"
+                .Columns("dateofbirth").HeaderText = "Date of Birth"
+                .Columns("civil_status").HeaderText = "Civil Status"
+                .Columns("nationality").HeaderText = "Nationality"
+                .Columns("house_number").HeaderText = "House Number"
+                .Columns("purok").HeaderText = "Purok"
+                .Columns("municipality").HeaderText = "Municipality"
+                .Columns("province").HeaderText = "Province"
+                .Columns("contact_number").HeaderText = "Contact Number"
+                .Columns("email").HeaderText = "Email"
+            End With
 
             If table.Rows.Count = 0 Then
                 ' Show "No data available" message
@@ -57,16 +72,6 @@ Public Class AdminClearance
                 txtClearanceTable.ColumnHeadersVisible = True
                 txtClearanceTable.RowHeadersVisible = True
 
-                ' Add Delete Button Column
-                If Not txtClearanceTable.Columns.Contains("DeleteButton") Then
-                    Dim deleteButtonColumn As New DataGridViewButtonColumn()
-                    deleteButtonColumn.Name = "DeleteButton"
-                    deleteButtonColumn.HeaderText = "Delete"
-                    deleteButtonColumn.Text = "Delete"
-                    deleteButtonColumn.UseColumnTextForButtonValue = True
-                    txtClearanceTable.Columns.Add(deleteButtonColumn)
-                End If
-
                 ' Add Print Button Column
                 If Not txtClearanceTable.Columns.Contains("PrintButton") Then
                     Dim printButtonColumn As New DataGridViewButtonColumn()
@@ -75,6 +80,16 @@ Public Class AdminClearance
                     printButtonColumn.Text = "Print Clearance"
                     printButtonColumn.UseColumnTextForButtonValue = True
                     txtClearanceTable.Columns.Add(printButtonColumn)
+                End If
+
+                ' Add Delete Button Column
+                If Not txtClearanceTable.Columns.Contains("DeleteButton") Then
+                    Dim deleteButtonColumn As New DataGridViewButtonColumn()
+                    deleteButtonColumn.Name = "DeleteButton"
+                    deleteButtonColumn.HeaderText = "Delete"
+                    deleteButtonColumn.Text = "Delete"
+                    deleteButtonColumn.UseColumnTextForButtonValue = True
+                    txtClearanceTable.Columns.Add(deleteButtonColumn)
                 End If
 
                 AdjustDataGridView()
@@ -105,24 +120,30 @@ Public Class AdminClearance
 
     ' Handle cell content clicks (optional for future functionality)
     Private Sub txtClearanceTable_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles txtClearanceTable.CellContentClick
-        If e.RowIndex < 0 Then Return ' Ignore header clicks
+        If e.RowIndex < 0 OrElse e.ColumnIndex < 0 Then Exit Sub
 
-        ' Get the selected row
+        If e.ColumnIndex >= txtClearanceTable.Columns.Count Then Exit Sub
+
+        Dim columnName As String = txtClearanceTable.Columns(e.ColumnIndex).Name
+
         Dim selectedRow As DataGridViewRow = txtClearanceTable.Rows(e.RowIndex)
 
-        ' Check if the clicked cell is the "Delete" button
-        If txtClearanceTable.Columns(e.ColumnIndex).Name = "DeleteButton" Then
-            Dim clearanceId As Integer = Convert.ToInt32(selectedRow.Cells("id").Value)
-            DeleteClearanceRecord(clearanceId)
-        End If
+        If columnName = "DeleteButton" Then
+            If selectedRow.Cells("id").Value IsNot DBNull.Value Then
+                Dim clearanceId As Integer = Convert.ToInt32(selectedRow.Cells("id").Value)
+                DeleteClearanceRecord(clearanceId)
 
-        ' Check if the clicked cell is the "Print" button
-        If txtClearanceTable.Columns(e.ColumnIndex).Name = "PrintButton" Then
+                printRowData = Nothing
+            End If
+        ElseIf columnName = "PrintButton" Then
             printRowData = selectedRow
-            PrintPreviewDialog1.Document = PrintDocument1
-            PrintPreviewDialog1.ShowDialog()
+            If printRowData IsNot Nothing Then
+                PrintPreviewDialog1.Document = PrintDocument1
+                PrintPreviewDialog1.ShowDialog()
+            End If
         End If
     End Sub
+
 
     ' Delete record function
     Private Sub DeleteClearanceRecord(clearanceId As Integer)
@@ -136,9 +157,10 @@ Public Class AdminClearance
                 cmd.Parameters.AddWithValue("@id", clearanceId)
                 cmd.ExecuteNonQuery()
 
-                ' Reload the data after deletion
-                LoadClearanceData()
+                ' Clear printRowData if it was pointing to this row
+                printRowData = Nothing
 
+                LoadClearanceData() ' Or refresh table method
                 MessageBox.Show("Clearance record deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
@@ -147,6 +169,7 @@ Public Class AdminClearance
             If conn.State = ConnectionState.Open Then conn.Close()
         End Try
     End Sub
+
 
     ' Handle the printing of the selected row data
     Private Sub PrintDocument1_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument1.PrintPage

@@ -31,6 +31,20 @@ Public Class AdminBlotter
             blotterTableData.ReadOnly = True
             blotterTableData.DataSource = table
 
+            With blotterTableData
+                .Columns("fullname").HeaderText = "Fullname"
+                .Columns("address").HeaderText = "Address"
+                .Columns("gender").HeaderText = "Gender"
+                .Columns("dateofbirth").HeaderText = "Date of Birth"
+                .Columns("contact").HeaderText = "Contact Number"
+                .Columns("complaint_fullname").HeaderText = "Complaint Fullname"
+                .Columns("complaint_gender").HeaderText = "Complaint Gender"
+                .Columns("complaint_address").HeaderText = "Complaint Address"
+                .Columns("address_issues").HeaderText = "Issue Address"
+                .Columns("issues_status").HeaderText = "Status"
+            End With
+
+
             If table.Rows.Count = 0 Then
                 ' Show "No data available"
                 blotterTableData.DataSource = Nothing

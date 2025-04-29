@@ -13,18 +13,24 @@ Public Class AddCedula
     ' Form Load event
     Private Sub AddCedula_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Generate random Cedula number
-        Dim rng As New Random()
-        Dim randomNumber As String = rng.Next(100000000, 999999999).ToString()
+        GenerateRandomCedulaNumber()
+
         ' Set the form to maximize when it is opened
         Me.WindowState = FormWindowState.Maximized
-        txtCedulaNumber.Text = randomNumber
-        txtCedulaNumber.ReadOnly = True
 
         ' Make tax fields readonly
         txtBasicTax.Text = "5.00"
         txtBasicTax.ReadOnly = True
         txtTotalBox.ReadOnly = True
         txtInterestBox.ReadOnly = True
+    End Sub
+
+    ' Function to generate and set a new random Cedula number
+    Private Sub GenerateRandomCedulaNumber()
+        Dim rng As New Random()
+        Dim randomNumber As String = rng.Next(100000000, 999999999).ToString()
+        txtCedulaNumber.Text = randomNumber
+        txtCedulaNumber.ReadOnly = True
     End Sub
 
     ' Automatically calculate total tax and interest
@@ -57,7 +63,6 @@ Public Class AddCedula
         txtInterestBox.Text = interest.ToString("F2")
         txtTotalBox.Text = total.ToString("F2")
     End Sub
-
 
     ' Trigger calculation when user types income
     Private Sub txtGrossReceipt_TextChanged(sender As Object, e As EventArgs) Handles txtGrossReceipt.TextChanged
@@ -116,12 +121,44 @@ Public Class AddCedula
 
                     cmd.ExecuteNonQuery()
                     MessageBox.Show("Cedula record saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    ' Clear the form after successful save
+                    ClearForm()
+
+                    ' Generate new random Cedula number for the next entry
+                    GenerateRandomCedulaNumber()
+
                 End Using
 
             Catch ex As Exception
                 MessageBox.Show("Error saving data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End Using
+    End Sub
+
+    ' Function to clear the form
+    Private Sub ClearForm()
+        txtFullname.Clear()
+        txtAge.Clear()
+        txtGender.Clear()
+        txtDateOfBirth.Value = Date.Today
+        txtAddress.Clear()
+        txtCivilStatus.Clear()
+        txtNationality.Clear()
+        txtPlaceIssue.Clear()
+        txtWeight.Clear()
+        txtHeight.Clear()
+        txtTin.Clear()
+        txtGrossReceipt.Clear()
+        txtSalaries.Clear()
+        txtRealProperty.Clear()
+        txtInterestBox.Clear()
+        txtTotalBox.Clear()
+
+        ' Reset tax fields
+        txtBasicTax.Text = "5.00"
+        txtInterestBox.Text = "0.00"
+        txtTotalBox.Text = "0.00"
     End Sub
 
     ' Go back to AdminCedula form

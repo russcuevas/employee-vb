@@ -25,6 +25,23 @@ Public Class AdminCedula
             txtCedulaTable.Columns.Clear()
             txtCedulaTable.AllowUserToAddRows = False
             txtCedulaTable.ReadOnly = True
+            txtCedulaTable.DataSource = table
+
+            ' Set custom column headers
+            With txtCedulaTable
+                .Columns("cedula_number").HeaderText = "Cedula Number"
+                .Columns("fullname").HeaderText = "Fullname"
+                .Columns("address").HeaderText = "Address"
+                .Columns("gender").HeaderText = "Gender"
+                .Columns("dateofbirth").HeaderText = "Date of Birth"
+                .Columns("gross_receipt").HeaderText = "Gross Receipt"
+                .Columns("salaries").HeaderText = "Salaries"
+                .Columns("real_property").HeaderText = "Real Property"
+                .Columns("basic_tax").HeaderText = "Basic Tax"
+                .Columns("total_tax").HeaderText = "Total Tax"
+                .Columns("interest").HeaderText = "Interest"
+            End With
+
 
             If table.Rows.Count = 0 Then
                 ' Show "No data available" message
