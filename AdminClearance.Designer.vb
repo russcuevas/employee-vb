@@ -23,6 +23,7 @@ Partial Class AdminClearance
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(AdminClearance))
         LinkDashboard = New LinkLabel()
         Button1 = New Button()
         PictureBox4 = New PictureBox()
@@ -37,15 +38,17 @@ Partial Class AdminClearance
         LinkLabel2 = New LinkLabel()
         LinkLabel3 = New LinkLabel()
         FileSystemWatcher1 = New IO.FileSystemWatcher()
-        DataGridView1 = New DataGridView()
+        txtClearanceTable = New DataGridView()
         Label2 = New Label()
         addClearanceLink = New LinkLabel()
+        PrintDocument1 = New Printing.PrintDocument()
+        PrintPreviewDialog1 = New PrintPreviewDialog()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(txtClearanceTable, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' LinkDashboard
@@ -205,15 +208,15 @@ Partial Class AdminClearance
         FileSystemWatcher1.EnableRaisingEvents = True
         FileSystemWatcher1.SynchronizingObject = Me
         ' 
-        ' DataGridView1
+        ' txtClearanceTable
         ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(409, 365)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowHeadersWidth = 51
-        DataGridView1.RowTemplate.Height = 29
-        DataGridView1.Size = New Size(1401, 549)
-        DataGridView1.TabIndex = 27
+        txtClearanceTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        txtClearanceTable.Location = New Point(409, 365)
+        txtClearanceTable.Name = "txtClearanceTable"
+        txtClearanceTable.RowHeadersWidth = 51
+        txtClearanceTable.RowTemplate.Height = 29
+        txtClearanceTable.Size = New Size(1401, 549)
+        txtClearanceTable.TabIndex = 27
         ' 
         ' Label2
         ' 
@@ -243,6 +246,19 @@ Partial Class AdminClearance
         addClearanceLink.TabStop = True
         addClearanceLink.Text = "ADD DATA +"
         ' 
+        ' PrintDocument1
+        ' 
+        ' 
+        ' PrintPreviewDialog1
+        ' 
+        PrintPreviewDialog1.AutoScrollMargin = New Size(0, 0)
+        PrintPreviewDialog1.AutoScrollMinSize = New Size(0, 0)
+        PrintPreviewDialog1.ClientSize = New Size(400, 300)
+        PrintPreviewDialog1.Enabled = True
+        PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), Icon)
+        PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        PrintPreviewDialog1.Visible = False
+        ' 
         ' AdminClearance
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -252,7 +268,7 @@ Partial Class AdminClearance
         ClientSize = New Size(1924, 953)
         Controls.Add(addClearanceLink)
         Controls.Add(Label2)
-        Controls.Add(DataGridView1)
+        Controls.Add(txtClearanceTable)
         Controls.Add(LinkLabel1)
         Controls.Add(LinkLabel2)
         Controls.Add(LinkLabel3)
@@ -273,7 +289,7 @@ Partial Class AdminClearance
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).EndInit()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        CType(txtClearanceTable, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -291,7 +307,9 @@ Partial Class AdminClearance
     Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents LinkLabel3 As LinkLabel
     Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents txtClearanceTable As DataGridView
     Friend WithEvents Label2 As Label
     Friend WithEvents addClearanceLink As LinkLabel
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
 End Class

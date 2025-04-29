@@ -35,7 +35,6 @@ Partial Class AddClearance
         Label7 = New Label()
         txtCivilStatus = New TextBox()
         Label8 = New Label()
-        txtDateOfBirth = New TextBox()
         Label9 = New Label()
         txtNationality = New TextBox()
         Label10 = New Label()
@@ -50,6 +49,7 @@ Partial Class AddClearance
         txtEmail = New TextBox()
         Label15 = New Label()
         txtMobileNumber = New TextBox()
+        txtDateOfBirth = New DateTimePicker()
         SuspendLayout()
         ' 
         ' btnSave
@@ -214,16 +214,6 @@ Partial Class AddClearance
         Label8.TabIndex = 24
         Label8.Text = "DATE OF BIRTH"
         ' 
-        ' txtDateOfBirth
-        ' 
-        txtDateOfBirth.BorderStyle = BorderStyle.FixedSingle
-        txtDateOfBirth.Location = New Point(186, 568)
-        txtDateOfBirth.Margin = New Padding(4)
-        txtDateOfBirth.Multiline = True
-        txtDateOfBirth.Name = "txtDateOfBirth"
-        txtDateOfBirth.Size = New Size(434, 50)
-        txtDateOfBirth.TabIndex = 23
-        ' 
         ' Label9
         ' 
         Label9.AutoSize = True
@@ -385,6 +375,15 @@ Partial Class AddClearance
         txtMobileNumber.Size = New Size(434, 50)
         txtMobileNumber.TabIndex = 37
         ' 
+        ' txtDateOfBirth
+        ' 
+        txtDateOfBirth.CustomFormat = "yyyy-MM-dd"
+        txtDateOfBirth.Format = DateTimePickerFormat.Custom
+        txtDateOfBirth.Location = New Point(186, 582)
+        txtDateOfBirth.Name = "txtDateOfBirth"
+        txtDateOfBirth.Size = New Size(250, 27)
+        txtDateOfBirth.TabIndex = 101
+        ' 
         ' AddClearance
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -392,6 +391,7 @@ Partial Class AddClearance
         BackgroundImage = My.Resources.Resources.add_form_background
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1924, 953)
+        Controls.Add(txtDateOfBirth)
         Controls.Add(Label14)
         Controls.Add(txtEmail)
         Controls.Add(Label15)
@@ -409,7 +409,6 @@ Partial Class AddClearance
         Controls.Add(Label7)
         Controls.Add(txtCivilStatus)
         Controls.Add(Label8)
-        Controls.Add(txtDateOfBirth)
         Controls.Add(Label3)
         Controls.Add(txtGender)
         Controls.Add(btnBack)
@@ -439,7 +438,6 @@ Partial Class AddClearance
     Friend WithEvents Label7 As Label
     Friend WithEvents txtCivilStatus As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents txtDateOfBirth As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtNationality As TextBox
     Friend WithEvents Label10 As Label
@@ -454,4 +452,5 @@ Partial Class AddClearance
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents txtMobileNumber As TextBox
+    Friend WithEvents txtDateOfBirth As DateTimePicker
 End Class

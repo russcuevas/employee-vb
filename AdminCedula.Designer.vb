@@ -23,8 +23,9 @@ Partial Class AdminCedula
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(AdminCedula))
         addCedulaLink = New LinkLabel()
-        DataGridView1 = New DataGridView()
+        txtCedulaTable = New DataGridView()
         FileSystemWatcher1 = New IO.FileSystemWatcher()
         Label2 = New Label()
         LinkLabel1 = New LinkLabel()
@@ -40,7 +41,9 @@ Partial Class AdminCedula
         LinkBlotter = New LinkLabel()
         LinkCedula = New LinkLabel()
         LinkClearance = New LinkLabel()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        PrintDocument1 = New Printing.PrintDocument()
+        PrintPreviewDialog1 = New PrintPreviewDialog()
+        CType(txtCedulaTable, ComponentModel.ISupportInitialize).BeginInit()
         CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
@@ -63,15 +66,15 @@ Partial Class AdminCedula
         addCedulaLink.TabStop = True
         addCedulaLink.Text = "ADD DATA +"
         ' 
-        ' DataGridView1
+        ' txtCedulaTable
         ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(407, 368)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowHeadersWidth = 51
-        DataGridView1.RowTemplate.Height = 29
-        DataGridView1.Size = New Size(1401, 549)
-        DataGridView1.TabIndex = 42
+        txtCedulaTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        txtCedulaTable.Location = New Point(407, 368)
+        txtCedulaTable.Name = "txtCedulaTable"
+        txtCedulaTable.RowHeadersWidth = 51
+        txtCedulaTable.RowTemplate.Height = 29
+        txtCedulaTable.Size = New Size(1401, 549)
+        txtCedulaTable.TabIndex = 42
         ' 
         ' FileSystemWatcher1
         ' 
@@ -243,6 +246,19 @@ Partial Class AdminCedula
         LinkClearance.TabStop = True
         LinkClearance.Text = "Clearance"
         ' 
+        ' PrintDocument1
+        ' 
+        ' 
+        ' PrintPreviewDialog1
+        ' 
+        PrintPreviewDialog1.AutoScrollMargin = New Size(0, 0)
+        PrintPreviewDialog1.AutoScrollMinSize = New Size(0, 0)
+        PrintPreviewDialog1.ClientSize = New Size(400, 300)
+        PrintPreviewDialog1.Enabled = True
+        PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), Icon)
+        PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        PrintPreviewDialog1.Visible = False
+        ' 
         ' AdminCedula
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -251,7 +267,7 @@ Partial Class AdminCedula
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1924, 953)
         Controls.Add(addCedulaLink)
-        Controls.Add(DataGridView1)
+        Controls.Add(txtCedulaTable)
         Controls.Add(Label2)
         Controls.Add(LinkLabel1)
         Controls.Add(LinkLabel2)
@@ -268,7 +284,7 @@ Partial Class AdminCedula
         DoubleBuffered = True
         Name = "AdminCedula"
         Text = "AdminCedula"
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        CType(txtCedulaTable, ComponentModel.ISupportInitialize).EndInit()
         CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
@@ -279,7 +295,7 @@ Partial Class AdminCedula
     End Sub
 
     Friend WithEvents addCedulaLink As LinkLabel
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents txtCedulaTable As DataGridView
     Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
     Friend WithEvents Label2 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
@@ -295,4 +311,6 @@ Partial Class AdminCedula
     Friend WithEvents LinkCedula As LinkLabel
     Friend WithEvents LinkClearance As LinkLabel
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
 End Class

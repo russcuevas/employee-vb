@@ -31,7 +31,7 @@ Namespace My
 
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = AdminBlotter
+            Me.MainForm = AdminClearance
         End Sub
     End Class
 End Namespace
