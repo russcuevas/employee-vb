@@ -95,6 +95,7 @@ Partial Class AddClearance
         ' txtFullname
         ' 
         txtFullname.BorderStyle = BorderStyle.FixedSingle
+        txtFullname.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtFullname.Location = New Point(186, 286)
         txtFullname.Margin = New Padding(4)
         txtFullname.Multiline = True
@@ -171,6 +172,7 @@ Partial Class AddClearance
         ' txtGender
         ' 
         txtGender.BorderStyle = BorderStyle.FixedSingle
+        txtGender.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtGender.Location = New Point(186, 426)
         txtGender.Margin = New Padding(4)
         txtGender.Multiline = True
@@ -194,6 +196,7 @@ Partial Class AddClearance
         ' txtCivilStatus
         ' 
         txtCivilStatus.BorderStyle = BorderStyle.FixedSingle
+        txtCivilStatus.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtCivilStatus.Location = New Point(186, 708)
         txtCivilStatus.Margin = New Padding(4)
         txtCivilStatus.Multiline = True
@@ -230,6 +233,7 @@ Partial Class AddClearance
         ' txtNationality
         ' 
         txtNationality.BorderStyle = BorderStyle.FixedSingle
+        txtNationality.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtNationality.Location = New Point(186, 843)
         txtNationality.Margin = New Padding(4)
         txtNationality.Multiline = True
@@ -253,6 +257,7 @@ Partial Class AddClearance
         ' txtProvince
         ' 
         txtProvince.BorderStyle = BorderStyle.FixedSingle
+        txtProvince.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtProvince.Location = New Point(748, 708)
         txtProvince.Margin = New Padding(4)
         txtProvince.Multiline = True
@@ -276,6 +281,7 @@ Partial Class AddClearance
         ' txtMunicipality
         ' 
         txtMunicipality.BorderStyle = BorderStyle.FixedSingle
+        txtMunicipality.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtMunicipality.Location = New Point(748, 568)
         txtMunicipality.Margin = New Padding(4)
         txtMunicipality.Multiline = True
@@ -299,6 +305,7 @@ Partial Class AddClearance
         ' txtPurok
         ' 
         txtPurok.BorderStyle = BorderStyle.FixedSingle
+        txtPurok.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtPurok.Location = New Point(748, 426)
         txtPurok.Margin = New Padding(4)
         txtPurok.Multiline = True
@@ -322,6 +329,7 @@ Partial Class AddClearance
         ' txtHouseNumber
         ' 
         txtHouseNumber.BorderStyle = BorderStyle.FixedSingle
+        txtHouseNumber.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtHouseNumber.Location = New Point(748, 286)
         txtHouseNumber.Margin = New Padding(4)
         txtHouseNumber.Multiline = True
@@ -345,6 +353,7 @@ Partial Class AddClearance
         ' txtEmail
         ' 
         txtEmail.BorderStyle = BorderStyle.FixedSingle
+        txtEmail.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtEmail.Location = New Point(1288, 426)
         txtEmail.Margin = New Padding(4)
         txtEmail.Multiline = True
@@ -368,6 +377,7 @@ Partial Class AddClearance
         ' txtMobileNumber
         ' 
         txtMobileNumber.BorderStyle = BorderStyle.FixedSingle
+        txtMobileNumber.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtMobileNumber.Location = New Point(1288, 286)
         txtMobileNumber.Margin = New Padding(4)
         txtMobileNumber.Multiline = True

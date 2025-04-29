@@ -29,10 +29,9 @@ Partial Class AdminBlotter
         Label2 = New Label()
         LinkLabel1 = New LinkLabel()
         LinkLabel2 = New LinkLabel()
-        LinkLabel3 = New LinkLabel()
         LinkDashboard = New LinkLabel()
         Timer1 = New Timer(components)
-        Button1 = New Button()
+        btnLogout = New Button()
         PictureBox4 = New PictureBox()
         PictureBox3 = New PictureBox()
         PictureBox1 = New PictureBox()
@@ -40,6 +39,7 @@ Partial Class AdminBlotter
         LinkBlotter = New LinkLabel()
         LinkCedula = New LinkLabel()
         LinkClearance = New LinkLabel()
+        LinkLabel3 = New LinkLabel()
         CType(blotterTableData, ComponentModel.ISupportInitialize).BeginInit()
         CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
@@ -121,20 +121,6 @@ Partial Class AdminBlotter
         LinkLabel2.TabStop = True
         LinkLabel2.Text = "Cedula"
         ' 
-        ' LinkLabel3
-        ' 
-        LinkLabel3.AutoSize = True
-        LinkLabel3.BackColor = Color.White
-        LinkLabel3.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        LinkLabel3.LinkBehavior = LinkBehavior.NeverUnderline
-        LinkLabel3.LinkColor = Color.Green
-        LinkLabel3.Location = New Point(24, 367)
-        LinkLabel3.Name = "LinkLabel3"
-        LinkLabel3.Size = New Size(154, 41)
-        LinkLabel3.TabIndex = 39
-        LinkLabel3.TabStop = True
-        LinkLabel3.Text = "Clearance"
-        ' 
         ' LinkDashboard
         ' 
         LinkDashboard.AutoSize = True
@@ -149,18 +135,18 @@ Partial Class AdminBlotter
         LinkDashboard.TabStop = True
         LinkDashboard.Text = "Dashboard"
         ' 
-        ' Button1
+        ' btnLogout
         ' 
-        Button1.BackColor = Color.Green
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.ForeColor = Color.White
-        Button1.Location = New Point(24, 634)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(209, 58)
-        Button1.TabIndex = 34
-        Button1.Text = "LOGOUT"
-        Button1.UseVisualStyleBackColor = False
+        btnLogout.BackColor = Color.Green
+        btnLogout.FlatStyle = FlatStyle.Flat
+        btnLogout.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        btnLogout.ForeColor = Color.White
+        btnLogout.Location = New Point(24, 634)
+        btnLogout.Name = "btnLogout"
+        btnLogout.Size = New Size(209, 58)
+        btnLogout.TabIndex = 34
+        btnLogout.Text = "LOGOUT"
+        btnLogout.UseVisualStyleBackColor = False
         ' 
         ' PictureBox4
         ' 
@@ -245,6 +231,20 @@ Partial Class AdminBlotter
         LinkClearance.TabStop = True
         LinkClearance.Text = "Clearance"
         ' 
+        ' LinkLabel3
+        ' 
+        LinkLabel3.AutoSize = True
+        LinkLabel3.BackColor = Color.White
+        LinkLabel3.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        LinkLabel3.LinkBehavior = LinkBehavior.NeverUnderline
+        LinkLabel3.LinkColor = Color.Green
+        LinkLabel3.Location = New Point(24, 367)
+        LinkLabel3.Name = "LinkLabel3"
+        LinkLabel3.Size = New Size(154, 41)
+        LinkLabel3.TabIndex = 39
+        LinkLabel3.TabStop = True
+        LinkLabel3.Text = "Clearance"
+        ' 
         ' AdminBlotter
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -259,7 +259,7 @@ Partial Class AdminBlotter
         Controls.Add(LinkLabel2)
         Controls.Add(LinkLabel3)
         Controls.Add(LinkDashboard)
-        Controls.Add(Button1)
+        Controls.Add(btnLogout)
         Controls.Add(PictureBox4)
         Controls.Add(PictureBox3)
         Controls.Add(PictureBox1)
@@ -286,9 +286,8 @@ Partial Class AdminBlotter
     Friend WithEvents Label2 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents LinkLabel2 As LinkLabel
-    Friend WithEvents LinkLabel3 As LinkLabel
     Friend WithEvents LinkDashboard As LinkLabel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnLogout As Button
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
@@ -297,4 +296,5 @@ Partial Class AdminBlotter
     Friend WithEvents LinkCedula As LinkLabel
     Friend WithEvents LinkClearance As LinkLabel
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents LinkLabel3 As LinkLabel
 End Class

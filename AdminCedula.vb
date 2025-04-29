@@ -557,4 +557,39 @@ Public Class AdminCedula
             g.ResetTransform()
         End Using
     End Sub
+
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        Dim loginForm As New AdminLogin()
+        loginForm.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub LinkDashboard_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkDashboard.LinkClicked
+        ' If AdminDashboard is already open, just bring it to the front
+        Dim adminDashboard As New AdminDashboard()
+        adminDashboard.Show()
+        Me.Hide()
+    End Sub
+
+    ' Link to navigate to AdminClearance form
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+        Dim clearanceForm As New AdminClearance()
+        clearanceForm.Show()
+        Me.Hide() ' Hide the current AdminDashboard form
+    End Sub
+
+    ' Link to navigate to AdminCedula form
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+        Dim cedulaForm As New AdminCedula()
+        cedulaForm.Show()
+        Me.Hide() ' Hide the current AdminDashboard form
+    End Sub
+
+
+    ' Link to navigate to AdminBlotter form
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Dim blotterForm As New AdminBlotter()
+        blotterForm.Show()
+        Me.Hide() ' Hide the current AdminDashboard form
+    End Sub
 End Class

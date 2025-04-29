@@ -27,7 +27,7 @@ Partial Class AdminDashboard
         PictureBox1 = New PictureBox()
         PictureBox3 = New PictureBox()
         PictureBox4 = New PictureBox()
-        Button1 = New Button()
+        btnLogout = New Button()
         LinkDashboard = New LinkLabel()
         PictureBox5 = New PictureBox()
         Timer1 = New Timer(components)
@@ -82,18 +82,18 @@ Partial Class AdminDashboard
         PictureBox4.TabIndex = 4
         PictureBox4.TabStop = False
         ' 
-        ' Button1
+        ' btnLogout
         ' 
-        Button1.BackColor = Color.Green
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.ForeColor = Color.White
-        Button1.Location = New Point(21, 633)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(209, 58)
-        Button1.TabIndex = 8
-        Button1.Text = "LOGOUT"
-        Button1.UseVisualStyleBackColor = False
+        btnLogout.BackColor = Color.Green
+        btnLogout.FlatStyle = FlatStyle.Flat
+        btnLogout.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        btnLogout.ForeColor = Color.White
+        btnLogout.Location = New Point(21, 633)
+        btnLogout.Name = "btnLogout"
+        btnLogout.Size = New Size(209, 58)
+        btnLogout.TabIndex = 8
+        btnLogout.Text = "LOGOUT"
+        btnLogout.UseVisualStyleBackColor = False
         ' 
         ' LinkDashboard
         ' 
@@ -173,7 +173,7 @@ Partial Class AdminDashboard
         Controls.Add(LinkClearance)
         Controls.Add(PictureBox5)
         Controls.Add(LinkDashboard)
-        Controls.Add(Button1)
+        Controls.Add(btnLogout)
         Controls.Add(PictureBox4)
         Controls.Add(PictureBox3)
         Controls.Add(PictureBox1)
@@ -193,7 +193,7 @@ Partial Class AdminDashboard
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnLogout As Button
     Friend WithEvents LinkDashboard As LinkLabel
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Timer1 As Timer

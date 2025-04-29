@@ -33,6 +33,7 @@ Partial Class AdminLogin
         ' txtEmail
         ' 
         txtEmail.BorderStyle = BorderStyle.FixedSingle
+        txtEmail.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtEmail.Location = New Point(833, 459)
         txtEmail.Margin = New Padding(4)
         txtEmail.Multiline = True
@@ -56,10 +57,12 @@ Partial Class AdminLogin
         ' txtPassword
         ' 
         txtPassword.BorderStyle = BorderStyle.FixedSingle
+        txtPassword.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtPassword.Location = New Point(833, 567)
         txtPassword.Margin = New Padding(4)
         txtPassword.Multiline = True
         txtPassword.Name = "txtPassword"
+        txtPassword.PasswordChar = "*"c
         txtPassword.Size = New Size(498, 62)
         txtPassword.TabIndex = 5
         ' 

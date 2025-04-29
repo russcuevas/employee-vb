@@ -33,7 +33,7 @@ Partial Class AdminCedula
         LinkLabel3 = New LinkLabel()
         LinkDashboard = New LinkLabel()
         Timer1 = New Timer(components)
-        Button1 = New Button()
+        btnLogout = New Button()
         PictureBox4 = New PictureBox()
         PictureBox3 = New PictureBox()
         PictureBox1 = New PictureBox()
@@ -150,18 +150,18 @@ Partial Class AdminCedula
         LinkDashboard.TabStop = True
         LinkDashboard.Text = "Dashboard"
         ' 
-        ' Button1
+        ' btnLogout
         ' 
-        Button1.BackColor = Color.Green
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.ForeColor = Color.White
-        Button1.Location = New Point(19, 635)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(209, 58)
-        Button1.TabIndex = 34
-        Button1.Text = "LOGOUT"
-        Button1.UseVisualStyleBackColor = False
+        btnLogout.BackColor = Color.Green
+        btnLogout.FlatStyle = FlatStyle.Flat
+        btnLogout.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        btnLogout.ForeColor = Color.White
+        btnLogout.Location = New Point(19, 635)
+        btnLogout.Name = "btnLogout"
+        btnLogout.Size = New Size(209, 58)
+        btnLogout.TabIndex = 34
+        btnLogout.Text = "LOGOUT"
+        btnLogout.UseVisualStyleBackColor = False
         ' 
         ' PictureBox4
         ' 
@@ -273,7 +273,7 @@ Partial Class AdminCedula
         Controls.Add(LinkLabel2)
         Controls.Add(LinkLabel3)
         Controls.Add(LinkDashboard)
-        Controls.Add(Button1)
+        Controls.Add(btnLogout)
         Controls.Add(PictureBox4)
         Controls.Add(PictureBox3)
         Controls.Add(PictureBox1)
@@ -302,7 +302,7 @@ Partial Class AdminCedula
     Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents LinkLabel3 As LinkLabel
     Friend WithEvents LinkDashboard As LinkLabel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnLogout As Button
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox

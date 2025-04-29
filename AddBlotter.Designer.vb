@@ -87,6 +87,7 @@ Partial Class AddBlotter
         ' txtComplaintAddress
         ' 
         txtComplaintAddress.BorderStyle = BorderStyle.FixedSingle
+        txtComplaintAddress.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtComplaintAddress.Location = New Point(726, 569)
         txtComplaintAddress.Margin = New Padding(4)
         txtComplaintAddress.Multiline = True
@@ -110,6 +111,7 @@ Partial Class AddBlotter
         ' txtComplaintGender
         ' 
         txtComplaintGender.BorderStyle = BorderStyle.FixedSingle
+        txtComplaintGender.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtComplaintGender.Location = New Point(726, 427)
         txtComplaintGender.Margin = New Padding(4)
         txtComplaintGender.Multiline = True
@@ -133,6 +135,7 @@ Partial Class AddBlotter
         ' txtAddress
         ' 
         txtAddress.BorderStyle = BorderStyle.FixedSingle
+        txtAddress.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtAddress.Location = New Point(61, 870)
         txtAddress.Margin = New Padding(4)
         txtAddress.Multiline = True
@@ -169,6 +172,7 @@ Partial Class AddBlotter
         ' txtGender
         ' 
         txtGender.BorderStyle = BorderStyle.FixedSingle
+        txtGender.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtGender.Location = New Point(61, 427)
         txtGender.Margin = New Padding(4)
         txtGender.Multiline = True
@@ -272,6 +276,7 @@ Partial Class AddBlotter
         ' txtFullname
         ' 
         txtFullname.BorderStyle = BorderStyle.FixedSingle
+        txtFullname.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtFullname.Location = New Point(61, 287)
         txtFullname.Margin = New Padding(4)
         txtFullname.Multiline = True
@@ -295,6 +300,7 @@ Partial Class AddBlotter
         ' txtMobileNumber
         ' 
         txtMobileNumber.BorderStyle = BorderStyle.FixedSingle
+        txtMobileNumber.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtMobileNumber.Location = New Point(61, 722)
         txtMobileNumber.Margin = New Padding(4)
         txtMobileNumber.Multiline = True
@@ -318,6 +324,7 @@ Partial Class AddBlotter
         ' txtComplaintFullname
         ' 
         txtComplaintFullname.BorderStyle = BorderStyle.FixedSingle
+        txtComplaintFullname.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtComplaintFullname.Location = New Point(726, 287)
         txtComplaintFullname.Margin = New Padding(4)
         txtComplaintFullname.Multiline = True
