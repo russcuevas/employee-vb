@@ -311,7 +311,7 @@ Public Class AdminClearance
 
         Using signatureBrush As New SolidBrush(primaryColor)
             g.DrawLine(New Pen(Color.Black, 1), centerX + 30, marginTop + 20, centerX + 230, marginTop + 20)
-            g.DrawString("JUAN DELA CRUZ", New Font("Cambria", 12, FontStyle.Bold), signatureBrush, centerX + 70, marginTop + 25)
+            g.DrawString("MIGUEL OLGADO", New Font("Cambria", 12, FontStyle.Bold), signatureBrush, centerX + 70, marginTop + 25)
             g.DrawString("Barangay Captain", contentFont, signatureBrush, centerX + 70, marginTop + 45)
         End Using
 

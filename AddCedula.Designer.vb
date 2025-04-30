@@ -364,9 +364,9 @@ Partial Class AddCedula
         Label11.Location = New Point(573, 515)
         Label11.Margin = New Padding(4, 0, 4, 0)
         Label11.Name = "Label11"
-        Label11.Size = New Size(192, 40)
+        Label11.Size = New Size(199, 40)
         Label11.TabIndex = 62
-        Label11.Text = "HEIGHT (KG)"
+        Label11.Text = "HEIGHT (CM)"
         ' 
         ' txtProfession
         ' 
